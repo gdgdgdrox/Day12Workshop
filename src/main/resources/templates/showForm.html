@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <title>Number</title>
+    <body>
+        <h1> How many numbers do you wish to generate?</h1>
+        <form
+            action="#"
+            th:action="@{/resultPage}"
+            th:object="${number}"
+            method="POST">
+        
+            <input type="number" th:field="*{numberThatUserEntered}">
+            <p th:if="${#fields.hasErrors('numberThatUserEntered')}" th:errors="*{numberThatUserEntered}"></p>
+            <input type="submit"> 
+        </form>
+    </body>
+</html>
